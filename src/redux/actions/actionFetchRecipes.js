@@ -7,6 +7,7 @@ import {
 import axios from 'axios'
 
 
+
 const fetchRecipesLoading = () => {
     return {
         type: FETCH_RECIPES_IS_LOADING
@@ -28,11 +29,12 @@ const fetchRecipesError = error => {
 }
 
 export const fetchRecipes = title => {
+    
     return dispatch => {
 
         dispatch(fetchRecipesLoading())
 
-        axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${title}&app_id=a9cc05c9&app_key=23af70f24c239b623b99b9ad63c114b9`)
+        axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${title}&app_id=${process.env.REACT_APP_EDAMAM_APP_ID}&app_key=${process.env.REACT_APP_EDAMAM_APP_KEY}`)
             
         .then( res => {
             const recipesArray = res.data.hits;
