@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { Accordion, AccordionItem } from 'react-light-accordion';
 import FlipMove from 'react-flip-move';
-// import 'react-light-accordion/demo/css/index.css';
+import 'react-light-accordion/demo/css/index.css';
 
 
 
