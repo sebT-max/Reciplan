@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { Accordion, AccordionItem } from 'react-light-accordion';
 import FlipMove from 'react-flip-move';
-import 'react-light-accordion/demo/css/index.css';
+// import 'react-light-accordion/demo/css/index.css';
 
 
 
@@ -61,7 +61,7 @@ const SearchRecipes = () => {
                                     <img style={{height:250,marginTop:25,width:250}} alt ={data.recipe.images.REGULAR.url} src={data.recipe.images.REGULAR.url}/>
                                 }
                                 <br />
-                                <div className="container">
+                                <div className="yo container">
                                     <h4 className='mt-5 mb-5'> Ingrédients</h4>
                                         <ul className="d-flex ingredients-container">
                                             {data.recipe.ingredients.map(ingredient => {

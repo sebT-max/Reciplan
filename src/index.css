@@ -8,10 +8,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 
 #accordion{
   background-color:rgb(252, 252, 254);
@@ -27,9 +29,6 @@ code {
   margin-bottom:10px;
 }
 
-#accordion .card {
-  height: 1270px;
-}
 .card:hover {
   background-color: #fff;
 }
@@ -123,12 +122,11 @@ footer img{
   border-radius:10px;
   padding:12px;
   line-height:20px;
-
 }
 .ingredient{
   text-align:left;
   font-size:14;
-  height:16;
+  height:16px;
   color:grey;
   width:auto;
   margin-top:30px;
@@ -138,6 +136,7 @@ footer img{
   border:1px solid rgb(200, 191, 191);
   z-index:2000;
 }
+
 
 .header-fixed{
   position:sticky;
@@ -164,6 +163,7 @@ nav {
   width: 34vw;
   padding: 30px 20px;
 }
+
 
 @media only screen and (max-width:390px) {
   #accordion{
