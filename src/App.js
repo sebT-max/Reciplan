@@ -41,7 +41,10 @@ function App() {
      <div className="header-container">
             {menu}
         <img src={logo} style={logoPosition}/>
-        <Form />
+        <div id="form-2">
+          <Form />
+        </div>
+        
         
       </div>
       <div className="Appli" style={bgImage}>

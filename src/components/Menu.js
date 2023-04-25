@@ -42,12 +42,9 @@ function Menu() {
           aria-label="Toggle navigation"
         >
           {barreau}
-          
+
         </button>
-        
           {displayMenu}
-            
-          
     </nav>
   );
 }

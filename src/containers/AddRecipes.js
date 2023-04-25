@@ -6,6 +6,7 @@ import ProgressBar from './ProgressBar'
 import { Accordion, AccordionItem } from 'react-light-accordion';
 import 'react-light-accordion/demo/css/index.css';
 import { ToastContainer, toast } from 'react-toastify';
+import Logout from '../components/Firebase/Logout'
 
 const AddRecipes = ({ libraryData, deleteRecipe, deletAll }) => {
 
@@ -74,6 +75,9 @@ const AddRecipes = ({ libraryData, deleteRecipe, deletAll }) => {
 
     return (
         <main role="main">
+            <div id="add_recipe_logout">
+                <Logout />
+            </div>
             <div className="container" style={{minHeight: '200px'}}>
                 <div id="accordion">
                     <div className='bg-dark container br-10 p-3 mb-3 header-fixed'>

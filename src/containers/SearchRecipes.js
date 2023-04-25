@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { Accordion, AccordionItem } from 'react-light-accordion';
 import FlipMove from 'react-flip-move';
 import 'react-light-accordion/demo/css/index.css';
+import Form from "../components/Form";
 
 
 
@@ -107,6 +108,10 @@ const SearchRecipes = () => {
                 <div id="accordion">
                     <div className='bg-dark color-white container br-10 p-3 mb-3 header-fixed '>
                         <h4 style={{color:'white'}}>CHOOSE YOUR RECIPES</h4>
+                        <div id="form1">
+                            <Form />
+                        </div>
+                        
                     </div>
                     { listEmptyOrNotMessage}
                     { displayFetchedRecipes }

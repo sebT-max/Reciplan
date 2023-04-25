@@ -33,10 +33,10 @@ const Landing = () => {
  const btnDisplay = btn && (
      <>
       <div className="leftBox" onMouseOver = {setLeftImg}>
-        <Link to="/signup" className="btn btn-danger">Sign up</Link>
+        <Link to="/signup" className="m-4 btn btn-danger">Sign up</Link>
       </div>
       <div className="rightBox" onMouseOver = {setRightImg}>
-        <Link to="/login" className="btn btn-dark">Login</Link>
+        <Link to="/login" className="m-4 btn btn-dark">Sign in</Link>
       </div>
     </>
   )

@@ -328,6 +328,22 @@ button[disabled]:hover {
   color:white;
   font-size:28px;
 }
+.accordion .accordion-item.active .panel {
+  max-height: 500px;
+  transition: max-height 0.25s ease-in;
+}
+
+.Web {
+  display:flex;
+  justify-content:center;
+}
+#form1{
+  display:none;
+}
+#add_recipe_logout{
+  display:none;
+}
+
 
 
 /* END SIGNUP - LOGIN - FORGETPASSWORD */
@@ -343,8 +359,24 @@ button[disabled]:hover {
     box-shadow:10px 1px 10px;
     border:10px solid black;
 
+
   }
   
+}
+
+@media only screen and (max-width:900px) {
+  #addRecipe{
+    display: none;
+  }
+  #form-2{
+    display:none;
+  }
+  #form1{
+    display:block;
+  }
+  #add_recipe_logout{
+    display:block;
+  }
 }
 
 

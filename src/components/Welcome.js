@@ -4,13 +4,10 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth, user } from './Firebase/firebaseConfig';
 import { getDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-import Logout from './Firebase//Logout'
 import Loader from './Firebase//Loader'
 import SearchRecipes from '../containers/SearchRecipes';
 import AddRecipes from '../containers/AddRecipes';
-import recipes from '../images/recipesboard.jpg';
-
-
+import Logout from '../components/Firebase/Logout'
 
 const Welcome = props => {
     const navigate = useNavigate();
@@ -20,7 +17,7 @@ const Welcome = props => {
 
     useEffect(() => {
         const listener = onAuthStateChanged(auth, user => {
-            user ? setUserSession(user) : navigate('/');
+            user ? setUserSession(user) : navigate('/welcome');
         })
 
         if (!!userSession) {
@@ -44,45 +41,30 @@ const Welcome = props => {
         return listener();
     }, [userSession])
 
-    
-    
-         const oneOrTwoPages = window.innerWidth < 900 ?
-           (
-            <SearchRecipes userData={userData}/>
-            )
-             : 
-             (
-                <Fragment>
-                    <SearchRecipes userData={userData}/>
-                    <AddRecipes />
-                </Fragment>
-                
-             )
-             ;
-    
-        const bgImage = {
-            backgroundImage:`url(${recipes})`,
-            backgroundRepeat:"no-repeat",
-            backgroundSize:"cover"
-          }
+   
         
-
     return userSession === null ? (
         <Fragment>
             <Loader styling={{textAlign:'center', color:'#FFF'}} loadingMsg={"Authentification"}/>
         </Fragment>
     ) : (
         <Fragment>  
-        
-        
-        <div className="quiz-bg">
+            <div id="round_switch">
+                    <Logout />
+            </div>
             <div className="container">
-                <Logout />
-                <div className="d-flex Web">
-                    {oneOrTwoPages}
+                
+                <div className='Web'>
+                    <div id="searchRecipe">
+                        <SearchRecipes userData={userData}/>
+                    </div>
+
+                    <div id="addRecipe">
+                        <AddRecipes />
+                    </div>
                 </div>
             </div>
-        </div>
+        
         </Fragment>
     )
 }

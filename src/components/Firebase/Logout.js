@@ -1,9 +1,9 @@
 // Firebase 9
 import React, { useState, useEffect } from 'react';
 import { signOut } from "firebase/auth";
-import { auth } from './firebaseConfig';
+import { auth } from '../Firebase/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
-import ReactTooltip from 'react-tooltip';
+import ReactTooltip from 'react-tooltip'
 
 
 const Logout = () => {
