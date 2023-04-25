@@ -1,72 +1,63 @@
 import React, { Fragment } from 'react'
-import AddRecipes from './containers/AddRecipes'
-import SearchRecipes from './containers/SearchRecipes'
 import Footer from './components/Footer'
 import './App.css';
 import recipes from './images/recipesboard.jpg'
-import logo from './images/logo.png'
 import Form from "./components/Form";
-import Menu from "./components/Menu";
+import Welcome from "./components/Welcome";
+import Login from './components/Firebase/Login';
+import SignUp from './components/Firebase/Signup';
+import Landing from './components/Landing';
+import AddRecipes from './containers/AddRecipes';
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Menu from './components/Menu';
+import logo from './images/logo.png';
+
 
 
 function App() {
-  const logoPosition={
-    height:100,
-    margin: "0 auto"
-  }
+  
   const bgImage = {
     backgroundImage:`url(${recipes})`,
     backgroundRepeat:"no-repeat",
-    backgroundSize:"cover"
+    backgroundSize:"cover",
+    height:800
   }
+  const menu = window.innerWidth < 900 ? (
+    <Menu />)
+     : 
+     (
+        ""
+     )
+     ;
+  const logoPosition={
+  height:100,
+  margin: "0 auto"
+  }    
 
-
-  const smartPhoneOrOtherDevices = window.innerWidth < 900 ?
-(
-  <Fragment>
+    
+  return ( 
+    <Fragment>
      <Router>
-      <Menu />
-      <div className="header-container">
+     <div className="header-container">
+            {menu}
         <img src={logo} style={logoPosition}/>
         <Form />
+        
       </div>
-   
       <div className="Appli" style={bgImage}>
         <Routes>
-          <Route path="/" element={<SearchRecipes/>} />
-          <Route path='/myrecipes' element={<AddRecipes />} />    
+          <Route path="/" element={<Landing />} />
+          <Route path="/welcome" element={<Welcome />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp/>} />
+          <Route path="/myrecipes" element={<AddRecipes/>} />
+              
         </Routes>  
       </div>   
       <Footer />
 
     </Router>
-  </Fragment>
-)
-:
-(
-  <Fragment>
-    <div>
-        <div className="header-container">
-          <img src={logo} style={logoPosition}/>
-          <Form />
-        </div>
-        <div className="d-flex Web" style={bgImage}>
-          <SearchRecipes />      
-          <AddRecipes /> 
-        </div>
-    </div>
-    <Footer />
-    
-  </Fragment>
-)
-console.log(smartPhoneOrOtherDevices)
-
-    
-  return ( 
-<div>{smartPhoneOrOtherDevices}</div>
-
-    
+  </Fragment> 
   )
 }
 

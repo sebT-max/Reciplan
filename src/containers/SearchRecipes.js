@@ -21,7 +21,7 @@ const SearchRecipes = () => {
         });
     }
 
-    const container = window.innerWidth < 400 ? "":"container";
+    const container = window.innerWidth < 400 ? "":"yu";
 
 
     const listEmptyOrNotMessage = state.fetchedRecipes.length > 0 ? 
