@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import Footer from './components/Footer'
-import './App.css';
 import recipes from './images/recipesboard.jpg'
 import Form from "./components/Form";
 import Welcome from "./components/Welcome";
@@ -11,6 +10,7 @@ import AddRecipes from './containers/AddRecipes';
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Menu from './components/Menu';
 import logo from './images/logo.png';
+import './App.css';
 
 
 
@@ -40,7 +40,7 @@ function App() {
      <Router>
      <div className="header-container">
             {menu}
-        <img src={logo} style={logoPosition}/>
+        <img src={logo} style={logoPosition} alt="logo"/>
         <div id="form-2">
           <Form />
         </div>

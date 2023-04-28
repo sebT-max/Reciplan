@@ -35,7 +35,7 @@ const Form = () => {
         
             <div className="form-group">
                 <button 
-                className="btn btn-outline-secondary ml-3"
+                className="btn btn-light ml-3"
                 >GO
                 </button>
             </div>

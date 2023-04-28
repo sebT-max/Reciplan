@@ -14,12 +14,14 @@ code {
     monospace;
 }
 
+/*ACCORDION*/
 
 #accordion{
   background-color:rgb(252, 252, 254);
   border-radius: 30px;
   width:400px;
-  height: 790px;
+  min-height: 90px;
+  max-height:690px;
   overflow: auto;
   border:30px solid black;
   margin:0 auto;
@@ -28,7 +30,35 @@ code {
   margin-top:0px;
   margin-bottom:0px;
 }
+.accordion .accordion-item .title:hover {
+  background-color: #DC4C64;
+  color:white;
+}
 
+.ingredients-container {
+  justify-content:left;
+  border:1px solid grey;
+  flex-wrap:wrap;
+  box-shadow:1px 1px 10px #3e8195;
+  border-radius:10px;
+  padding:12px;
+  line-height:20px;
+}
+.ingredient{
+  text-align:left;
+  font-size:14;
+  height:16px;
+  color:grey;
+  width:auto;
+  margin-top:30px;
+  margin:20px;
+}
+.accordion .accordion-item {
+  border:1px solid rgb(200, 191, 191);
+  z-index:2000;
+}
+
+/* END ACCORDION */ 
 .card:hover {
   background-color: #fff;
 }
@@ -108,36 +138,6 @@ footer img{
   width:200px;
 }
 
-.accordion .accordion-item .title:hover {
-  background-color: #DC4C64;
-  color:white;
-}
-
-
-.ingredients-container {
-  justify-content:left;
-  border:1px solid grey;
-  flex-wrap:wrap;
-  box-shadow:1px 1px 10px #3e8195;
-  border-radius:10px;
-  padding:12px;
-  line-height:20px;
-}
-.ingredient{
-  text-align:left;
-  font-size:14;
-  height:16px;
-  color:grey;
-  width:auto;
-  margin-top:30px;
-  margin:20px;
-}
-.accordion .accordion-item {
-  border:1px solid rgb(200, 191, 191);
-  z-index:2000;
-}
-
-
 .header-fixed{
   position:sticky;
   flex-grow: 1;
@@ -209,9 +209,9 @@ nav {
 
 .formBoxRight span {
   display: block;
-  color: var(--red-color);
+  color: red;
   text-align: center;
-  border: 1px solid var(--red-color);
+  border: 1px solid red;
   padding: 10px;
   margin: 15px 0;
 }
@@ -225,7 +225,7 @@ nav {
 .formContent h2 {
   margin: 0 0 40px 0;
   padding: 0;
-  color: var(--white-color);
+  color: white;
   text-transform: uppercase;
 }
 
@@ -238,18 +238,18 @@ nav {
   width: 100%;
   padding: 10px 0;
   font-size: 17px;
-  color: var(--red-color);
+  color: red;
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: 30px;
   border: none;
   background: transparent;
-  border-bottom: 1px solid var(--white-color);
+  border-bottom: 1px solid white;
   outline: none;
 }
 
 .formContent .inputBox label {
-  color: var(--white-color);
+  color: white;
   position: absolute;
   top: 0;
   left: 0;
@@ -266,26 +266,26 @@ nav {
 .formContent .inputBox input:valid~label {
   top: -30px;
   left: 0;
-  color: var(--white-color);
+  color: white;
   font-size: 16px;
   font-style: italic;
 }
 
-/* Form buttons */
+Form buttons
 .formContent button {
   margin-left: 0;
   display: block;
   margin: 0 auto 20px;
   min-width: 150px;
   background-color: transparent;
-  color: var(--white-color);
+  color: white;
   padding: 7px;
   font-size: 15px;
   border-radius: 5px;
 }
 
 .formContent button:hover {
-  background-color: var(--red-color);
+  background-color: red;
   color: var(--white-color);
   cursor: pointer;
 }
@@ -294,9 +294,9 @@ button:disabled,
 button[disabled],
 button:disabled:hover,
 button[disabled]:hover {
-  border: 1px solid var(--light-grey-color);
-  background-color: var(--light-grey-color);
-  color: var(--dark-grey-color);
+  border: 1px solid lightgrey;
+  background-color: lightgrey;
+  color: darkgrey;
   opacity: 0.65;
   cursor: not-allowed;
 }
@@ -305,17 +305,17 @@ button[disabled]:hover {
   height: 50px;
   margin-top: 35px;
   padding-top: 15px;
-  border-top: 1px dashed var(--light-grey-color);
+  border-top: 1px dashed lightgrey;
 }
 
 .simpleLink {
-  color: var(--white-color);
+  color: white;
   text-decoration: none;
   font-size: 12px;
 }
 
 .simpleLink:hover {
-  color: var(--red-color);
+  color: red;
 }
 
 .startingImg {
@@ -327,10 +327,6 @@ button[disabled]:hover {
   padding:100px;
   color:white;
   font-size:28px;
-}
-.accordion .accordion-item.active .panel {
-  max-height: 500px;
-  transition: max-height 0.25s ease-in;
 }
 
 .Web {
@@ -344,8 +340,6 @@ button[disabled]:hover {
   display:none;
 }
 
-
-
 /* END SIGNUP - LOGIN - FORGETPASSWORD */
 
 @media only screen and (max-width:390px) {
@@ -358,10 +352,7 @@ button[disabled]:hover {
     margin:0 auto;
     box-shadow:10px 1px 10px;
     border:10px solid black;
-
-
-  }
-  
+  } 
 }
 
 @media only screen and (max-width:900px) {

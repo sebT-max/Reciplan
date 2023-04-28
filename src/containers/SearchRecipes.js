@@ -5,8 +5,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { Accordion, AccordionItem } from 'react-light-accordion';
 import FlipMove from 'react-flip-move';
-import 'react-light-accordion/demo/css/index.css';
 import Form from "../components/Form";
+import '../index.css';
 
 
 
@@ -56,13 +56,13 @@ const SearchRecipes = () => {
             return (
                 <Fragment key={data.id}>
           
-                        <AccordionItem className="card mb-2 mt-2" title={`${data.recipe.label}`}>
+                        <AccordionItem  className="mb-2 mt-2" title={`${data.recipe.label}`}>
                                 {
                                     data.recipe.images.REGULAR.url &&
                                     <img style={{height:250,marginTop:25,width:250}} alt ={data.recipe.images.REGULAR.url} src={data.recipe.images.REGULAR.url}/>
                                 }
                                 <br />
-                                <div className="yo container">
+                                <div className="container">
                                     <h4 className='mt-5 mb-5'> Ingrédients</h4>
                                         <ul className="d-flex ingredients-container">
                                             {data.recipe.ingredients.map(ingredient => {
