@@ -60,9 +60,10 @@ input:checked+.slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
 #round_switch{
   background-color:transparent;
-  padding:0px 20px 0px 0px;
+  padding:10px 20px 0px 0px;
 }
 /* END LOGOUT SWITCH */
 
@@ -71,4 +72,13 @@ input:checked+.slider:before {
   -webkit-transition: max-height 0.25s ease-in;
   -o-transition: max-height 0.25s ease-in;
   transition: max-height 0.25s ease-in;
+}
+
+
+@media only screen and (max-width:900px) {
+
+  #round_switch{
+    background-color:transparent;
+    padding:10px 20px 0px 0px;
+  }
 }

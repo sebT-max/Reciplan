@@ -10,7 +10,9 @@ import '../index.css';
 
 
 
-const SearchRecipes = () => {
+const SearchRecipes = (props) => {
+    console.log('hey')
+    console.log(props.userData.pseudo)
     const state = useSelector(state => state.search)
     const dispatch = useDispatch()
     
@@ -31,7 +33,7 @@ const SearchRecipes = () => {
     </div>
     :
     <div className='container bg-white p-3 mb-3'>
-        <h6>Let's find some nice recipes !</h6>
+        <h6>Let's find some nice recipes, {props.userData.pseudo} !</h6>
     </div>
 
 

@@ -10,6 +10,7 @@ import AddRecipes from '../containers/AddRecipes';
 import Logout from '../components/Firebase/Logout'
 
 const Welcome = props => {
+    console.log(props)
     const navigate = useNavigate();
 
     const [userSession, setUserSession] = useState(null);
@@ -17,7 +18,7 @@ const Welcome = props => {
 
     useEffect(() => {
         const listener = onAuthStateChanged(auth, user => {
-            user ? setUserSession(user) : navigate('/welcome');
+            user ? setUserSession(user) : navigate('/');
         })
 
         if (!!userSession) {
@@ -30,6 +31,7 @@ const Welcome = props => {
                     const docData = snapshot.data(); // objet
                     console.log(docData);
                     console.log(snapshot.id);
+                    console.log(userData)
                     setUserData(docData);
                 }
             })
@@ -60,7 +62,7 @@ const Welcome = props => {
                     </div>
 
                     <div id="addRecipe">
-                        <AddRecipes />
+                        <AddRecipes userData={userData} />
                     </div>
                 </div>
             </div>

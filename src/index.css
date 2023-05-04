@@ -20,8 +20,8 @@ code {
   background-color:rgb(252, 252, 254);
   border-radius: 30px;
   width:400px;
-  min-height: 90px;
-  max-height:690px;
+  height: 690px;
+  /* max-height:690px; */
   overflow: auto;
   border:30px solid black;
   margin:0 auto;
@@ -318,9 +318,7 @@ button[disabled]:hover {
   color: red;
 }
 
-.startingImg {
-  background-image: url(images/landing-img.png);
-}
+
 
 .landing-message {
   text-align:center;
@@ -338,6 +336,8 @@ button[disabled]:hover {
 }
 #add_recipe_logout{
   display:none;
+  background-color:transparent;
+  padding:10px 20px 0px 0px;
 }
 
 /* END SIGNUP - LOGIN - FORGETPASSWORD */
@@ -367,6 +367,8 @@ button[disabled]:hover {
   }
   #add_recipe_logout{
     display:block;
+    background-color:transparent;
+    padding:10px 20px 0px 0px;
   }
 }
 

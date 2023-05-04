@@ -1,9 +1,13 @@
-// Firebase 9 
+// Firebase 9
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from './firebaseConfig';
+import { auth, user } from '../Firebase/firebaseConfig';
+import { setDoc } from 'firebase/firestore'
+import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = (props) => {
+
+    const navigate = useNavigate();
 
     const data = {
         pseudo: '',
@@ -21,10 +25,17 @@ const Signup = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        const { email, password } = loginData;
+        const { email, password, pseudo } = loginData;
         createUserWithEmailAndPassword(auth, email, password)
-        .then(user => {
+        .then( authUser => {
+            return setDoc(user(authUser.user.uid), {
+                pseudo,
+                email
+            });
+        })
+        .then(() => {
             setLoginData({...data});
+            navigate('/welcome');
         })
         .catch(error => {
             setError(error);
@@ -34,7 +45,7 @@ const Signup = (props) => {
 
     const { pseudo, email, password, confirmPassword } = loginData;
 
-    const btn = pseudo === '' || email === '' || password === '' || password !== confirmPassword
+    const btn = pseudo === '' || pseudo.indexOf('@') > -1 || email === '' || password === '' || password !== confirmPassword
     ? <button disabled>Inscription</button> : <button>Inscription</button>
 
     // gestion erreurs
@@ -74,6 +85,9 @@ const Signup = (props) => {
 
                             {btn}
                         </form>
+                        <div className="linkContainer">
+                            <Link className="simpleLink" to="/login">Déjà inscrit? Connectez-vous.</Link>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,3 +96,4 @@ const Signup = (props) => {
 }
 
 export default Signup
+
